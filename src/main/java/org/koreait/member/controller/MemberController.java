@@ -60,7 +60,7 @@ public class MemberController {
         boolean result  = false;
 
         if(!result){
-            throw new UnAuthorizdException();
+            throw new ArithmeticException("", HttpStatus.BAD_REQUEST)
         }
 
         return utils.tpl("member/login");
