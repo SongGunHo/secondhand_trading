@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{front/layouts/main}">
+
+<th: block th:fragment="commcs">
+    <link rel="stylesheet" type="text/css" th:href="@{comm/css/error?v=${utils.version}}">
+</th:>
+<main layout:fragment="content" class="error-page">
+    <th:block th:replace="~{error/_content::comm}"></th:block>
+</main>
+</html>

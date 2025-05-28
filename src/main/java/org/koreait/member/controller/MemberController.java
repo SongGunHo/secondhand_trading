@@ -2,6 +2,7 @@ package org.koreait.member.controller;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.koreait.global.exceoption.UnAuthorizdException;
 import org.koreait.global.libs.Utils;
 import org.koreait.member.controller.RequestJoin;
 import org.koreait.member.controller.RequestLogin;
@@ -56,6 +57,11 @@ public class MemberController {
     @GetMapping("/login")
     public String login(@ModelAttribute RequestLogin form, Model model) {
         commonProcess("login", model);
+        boolean result  = false;
+
+        if(!result){
+            throw new UnAuthorizdException();
+        }
 
         return utils.tpl("member/login");
     }
