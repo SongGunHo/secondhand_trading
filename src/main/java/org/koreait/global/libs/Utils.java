@@ -3,6 +3,7 @@ package org.koreait.global.libs;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
+import org.koreait.global.advices.ConmonControllerAdvice;
 import org.koreait.member.services.JoinService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
@@ -20,7 +21,7 @@ public class Utils {
     private final MessageSource messageSource;
     private final LocaleResolver resolver;
     private final JoinService service;
-
+    private final ConmonControllerAdvice conmonControllerAdvice;
 
 
     public int version(){
